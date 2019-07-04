@@ -1,4 +1,4 @@
-FROM golang:alpine AS build
+FROM golang:1.12.6-alpine3.10 AS build
 
 ENV GO111MODULE=on
 
@@ -14,7 +14,7 @@ RUN go build -o golang-test  .
 
 
 
-FROM golang:alpine
+FROM golang:1.12.6-alpine3.10
 
 ENV GO111MODULE=on
 
