@@ -49,6 +49,7 @@ After having the container into a running state, you can access the API with a *
 
 ## Running this pipelne on a different CI tool
 This pipeline can be easily migrated to different CI tools but adjustments may be required. CI tools with instances agents can be easily used. Since the stages are using bash scripts, those can be easily leveraged to different CI tools and the only change would be the pipeline instructions file to be created based on the new tool.
+
 For containerized CI tools, additional changes will be required, since most of the bash scripts will not be able to be used, however the same steps can be easily migrated to tools like TravisCI and Drone.IO.
 
 
