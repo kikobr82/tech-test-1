@@ -2,4 +2,4 @@
 TAG=tech-test-1
 
 docker build \
-    --tag ${TAG} 
+    --tag ${TAG} .
