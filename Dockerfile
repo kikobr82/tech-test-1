@@ -1,17 +1,31 @@
+FROM golang:alpine AS build
+
+ENV GO111MODULE=on
+
+WORKDIR /app
+
+RUN apk update --no-cache
+
+ADD ./ /app
+
+RUN apk add git
+
+RUN go build -o golang-test  .
+
+
+
 FROM golang:alpine
 
 ENV GO111MODULE=on
 
 WORKDIR /app
 
-ADD ./ /app
-
 RUN apk update --no-cache
 
-RUN apk add git
+EXPOSE 8000
 
-RUN go build -o golang-test  .
+COPY --from=build /app/golang-test /app/
 
 ENTRYPOINT ["/app/golang-test"]
 
-EXPOSE 8000
+
